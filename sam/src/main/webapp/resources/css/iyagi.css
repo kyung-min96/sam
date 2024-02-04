@@ -1,0 +1,411 @@
+@charset "utf-8";
+
+
+
+.bn-story-bg { 
+	background:url(../imgs/ssam-iyagi-bg.jpg)no-repeat center center;
+	background-attachment:fixed;
+	background-size:cover;
+}
+
+.subtitle-txt { font-weight:700; }
+
+
+
+@media screen and (min-width:1450px) {
+
+	.imgcard-story-bg {
+		position:relative;
+		height:250px; margin:100px 0 50px;
+		background:#e3f0c7;
+		transition:all 0.3s ease-in 0.3s;
+	}
+
+	.story-img {
+		position:absolute; left:50%; top:-50px;
+		width:650px; height:350px;
+		border-radius:20px;
+		transition:all 0.3s ease-in;
+	}
+	.story-img-what {
+		background:url(../imgs/ssam-iyagi-what.jpg)no-repeat center center;
+		background-size:cover;
+		box-shadow:5px 5px 15px 1px rgba(0, 0, 0, 0.7); 
+		transform:translate(-650px);
+	}
+	.story-img-history {
+		background:url(../imgs/ssam-iyagi-history.jpg)no-repeat center center;
+		background-size:cover;
+		box-shadow:-5px 5px 15px 1px rgba(0, 0, 0, 0.7);
+	}
+
+	.story-txt { 
+		position:absolute;
+		width:700px; padding:100px 50px;
+		text-align:center;
+	}
+	.story-txt-what { left:50%; }
+	.story-txt-history { right:50%; }
+	
+	.imgcard-story-bg:hover {
+		color:#f6f6f6;
+		background:#5e5e5e;
+	}
+	.imgcard-story-bg:hover .story-img-what { left:48%; }
+	.imgcard-story-bg:hover .story-img-history { left:52%; }
+
+
+
+	.carousel-wrap { margin:50px auto 0; }
+	
+	.bx-wrapper .bx-prev, .bx-wrapper .bx-next { font-size:72px; }
+
+	.slide-story-img { width:500px; height:275px; }
+	.slide-story-img1 {
+		background:url(../imgs/ssam-menu1.png) no-repeat center center;
+		background-size:50%;
+	}
+	.slide-story-img2 {
+		background:url(../imgs/ssam-menu2.png) no-repeat center center;
+		background-size:50%;
+	}
+	.slide-story-img3 {
+		background:url(../imgs/ssam-menu3.png) no-repeat center center;
+		background-size:50%; 
+	}
+	.slide-story-img4 {
+		background:url(../imgs/ssam-menu4.png) no-repeat center center;
+		background-size:50%; 
+	}
+
+	.slide-story-title {
+		width:300px;
+		margin:0 100px; padding:10px 0;
+		font-size:24px; color:#000; 
+		font-weight:700; text-align:center;
+		background:#f0ddc0;
+		border-radius:10px 10px 0 0;    
+	}
+
+	.slide > p {
+		width:400px;
+		margin:0 50px; padding:50px;
+		text-align:center;
+		background:#81c784;
+		border-radius:0 0 10px 10px;
+	}
+
+
+
+	.txtcard-story-bg {
+		display:flex; justify-content:center; align-items:center;
+		height:250px; margin:100px 0;
+		text-align:center;
+		background:#e3f0c7;
+		transition:all 0.3s ease-in; 
+	}
+	
+	.txtcard-story-bg > p { width:700px; }
+	
+	.txtcard-story-bg:hover { 
+		color:#f6f6f6;
+		background:#5e5e5e;
+	}
+}
+
+
+
+@media screen and (min-width:1050px) and (max-width:1449px) {
+
+	.imgcard-story-bg {
+		position:relative;
+		height:250px; margin:100px 0 50px;
+		background:#e3f0c7;
+		transition:all 0.3s ease-in 0.3s;
+	}
+
+	.story-img, .story-txt, .story-txt > p {
+		position:absolute; left:50%; top:-50px;
+		width:650px; height:350px;
+		border-radius:20px; overflow:hidden;
+		transform:translate(-50%);
+	}
+	.story-img-what {
+		background:url(../imgs/ssam-iyagi-what.jpg)no-repeat center center;
+		background-size:cover;
+		box-shadow:5px 5px 15px 1px rgba(0, 0, 0, 0.7);
+	}
+	.story-img-history {
+		background:url(../imgs/ssam-iyagi-history.jpg)no-repeat center center;
+		background-size:cover;
+		box-shadow:-5px 5px 15px 1px rgba(0, 0, 0, 0.7);
+	}
+	
+	.story-txt > p {
+		top:350px; padding:150px 50px;
+		color:#fff; text-align:center;
+		background:rgba(0,0,0,0.6);
+		opacity:0; transition:all 0.3s ease-in;
+	}
+	.imgcard-story-bg:hover { background:#5e5e5e; }
+	.imgcard-story-bg:hover .story-txt > p { top:0; opacity:1; }
+
+
+	.carousel-wrap { margin:50px auto 0; }
+
+	.bx-wrapper .bx-prev, .bx-wrapper .bx-next { font-size:68px; }
+
+	.slide-story-img { width:500px; height:275px; }
+	.slide-story-img1 {
+		background:url(../imgs/ssam-menu1.png) no-repeat center center;
+		background-size:50%;
+	}
+	.slide-story-img2 {
+		background:url(../imgs/ssam-menu2.png) no-repeat center center;
+		background-size:50%;
+	}
+	.slide-story-img3 {
+		background:url(../imgs/ssam-menu3.png) no-repeat center center;
+		background-size:50%;
+	}
+	.slide-story-img4 {
+		background:url(../imgs/ssam-menu4.png) no-repeat center center;
+		background-size:50%;
+	}
+
+	.slide-story-title {
+		width:300px;
+		margin:0 100px; padding:10px 0;
+		font-size:24px; color:#000; 
+		font-weight:700; text-align:center; 
+		background:#f0ddc0;
+		border-radius:10px 10px 0 0;    
+	}
+
+	.slide > p {
+		width:400px;
+		margin:0 50px; padding:50px;
+		text-align:center;
+		background:#81c784;
+		border-radius:0 0 10px 10px;
+	}
+
+
+
+	.txtcard-story-bg {
+		display:flex; justify-content:center; align-items:center;
+		height:250px; margin:100px 0;
+		text-align:center;
+		background:#e3f0c7;
+		transition:all 0.5s ease-in; 
+	}
+	
+	.txtcard-story-bg > p { width:500px; }
+	
+	.txtcard-story-bg:hover { 
+		color:#f6f6f6;
+		background:#5e5e5e;
+	}
+}
+
+
+
+@media screen and (min-width:600px) and (max-width:1049px) {
+	
+	.imgcard-story-bg {
+		position:relative;
+		height:250px; margin:70px 0 30px;
+		background:#e3f0c7;
+		transition:all 0.3s ease-in 0.3s;
+	}
+
+	.story-img, .story-txt, .story-txt > p {
+		position:absolute; left:50%; top:-30px;
+		width:540px; height:310px;
+		border-radius:20px; overflow:hidden;
+		transform:translate(-50%);
+	}
+	.story-img-what {
+		background:url(../imgs/ssam-iyagi-what.jpg) no-repeat center center;
+		background-size:cover;
+		box-shadow:5px 5px 15px 1px rgba(0, 0, 0, 0.7); 
+	}
+	.story-img-history {
+		background:url(../imgs/ssam-iyagi-history.jpg) no-repeat center center;
+		background-size:cover;
+		box-shadow:-5px 5px 15px 1px rgba(0, 0, 0, 0.7);
+	}
+	
+	.story-txt > p {
+		top:310px; padding:130px 50px;
+		color:#fff; text-align:center;
+		background:rgba(0,0,0,0.6);
+		opacity:0; transition:all 0.3s ease-in;
+	}
+	.imgcard-story-bg:hover { background:#5e5e5e; }
+	.imgcard-story-bg:hover .story-txt > p { top:0; opacity:1; }
+
+
+
+	.carousel-wrap { margin:40px 0 0 7.5px; }
+	
+	.bx-wrapper .bx-controls-direction a { top:105%; }
+	.bx-wrapper .bx-next { right:10px; }
+	.bx-wrapper .bx-prev, .bx-wrapper .bx-next { font-size:50px; }
+	
+	
+
+	.slide-story-img { width:285px; height:195px; }
+	.slide-story-img1 {
+		background:url(../imgs/ssam-menu1.png) no-repeat center center;
+		background-size:65%;
+	} 
+	.slide-story-img2 {
+		background:url(../imgs/ssam-menu2.png) no-repeat center center;
+		background-size:65%;
+	}
+	.slide-story-img3 {
+		background:url(../imgs/ssam-menu3.png) no-repeat center center;
+		background-size:65%;
+	}
+	.slide-story-img4 {
+		background:url(../imgs/ssam-menu4.png) no-repeat center center;
+		background-size:65%;
+	}
+
+	.slide-story-title {
+		width:215px;
+		margin:0 35px; padding:5px 0;
+		font-size:18px; color:#000; 
+		font-weight:700; text-align:center; 
+		background:#f0ddc0;
+		border-radius:10px 10px 0 0;    
+	}
+
+	.slide > p {
+		width:285px;
+		padding:30px;
+		text-align:center;
+		background:#81c784;
+		border-radius:0 0 10px 10px;
+	}
+
+
+
+	.txtcard-story-bg {
+		display:flex; justify-content:center; align-items:center;
+		height:250px; margin:80px 0;
+		text-align:center;
+		background:#e3f0c7;
+		transition:all 0.3s ease-in; 
+	}
+	
+	.txtcard-story-bg > p { width:500px; }
+	
+	.txtcard-story-bg:hover { 
+		color:#f6f6f6;
+		background:#5e5e5e;
+	}
+}
+
+
+
+@media screen and (max-width:599px) {
+
+	.imgcard-story-bg {
+		position:relative; left:50%;
+		width:340px; height:210px; margin-top:30px;
+		background:#e3f0c7;
+		border-radius:10px;
+		transform:translate(-50%);
+		transition:all 0.5s ease-in 0.5s;
+	}
+
+	.story-img, .story-txt, .story-txt > p {
+		position:absolute; left:50%; top:15px;
+		width:310px; height:180px;
+		border-radius:20px; overflow:hidden;
+		transform:translate(-50%);
+	}
+	.story-img-what {
+		background:url(../imgs/ssam-iyagi-what.jpg) no-repeat center center;
+		background-size:cover;
+		box-shadow:5px 5px 15px 1px rgba(0, 0, 0, 0.7); 
+	}
+	.story-img-history {
+		background:url(../imgs/ssam-iyagi-history.jpg) no-repeat center center;
+		background-size:cover;
+		box-shadow:-5px 5px 15px 1px rgba(0, 0, 0, 0.7);
+	}
+	
+	.story-txt > p {
+		top:180px; padding:30px 40px;
+		color:#fff; text-align:center;
+		background:rgba(0,0,0,0.6);
+		opacity:0; transition:all 0.3s ease-in;
+	}
+	.imgcard-story-bg:hover { background:#5e5e5e; }
+	.imgcard-story-bg:hover .story-txt > p { top:0; opacity:1; }
+
+
+
+	.carousel-wrap { margin:40px 0 0 27.5px; }
+	
+	.bx-wrapper .bx-controls-direction a { top:105%; }
+	.bx-wrapper .bx-next { right:10px; }
+	.bx-wrapper .bx-prev, .bx-wrapper .bx-next { font-size:46px; }
+	
+	
+
+	.slide-story-img { width:285px; height:195px; }
+	.slide-story-img1 {
+		background:url(../imgs/ssam-menu1.png) no-repeat center center;
+		background-size:65%;
+	} 
+	.slide-story-img2 {
+		background:url(../imgs/ssam-menu2.png) no-repeat center center;
+		background-size:65%;
+	}
+	.slide-story-img3 {
+		background:url(../imgs/ssam-menu3.png) no-repeat center center;
+		background-size:65%;
+	}
+	.slide-story-img4 {
+		background:url(../imgs/ssam-menu4.png) no-repeat center center;
+		background-size:65%;
+	}
+
+	.slide-story-title {
+		width:215px;
+		margin:0 35px; padding:5px 0;
+		font-size:18px; color:#000; 
+		font-weight:700; text-align:center; 
+		background:#f0ddc0;
+		border-radius:10px 10px 0 0;    
+	}
+
+	.slide > p {
+		width:285px;
+		padding:30px;
+		text-align:center;
+		background:#81c784;
+		border-radius:0 0 10px 10px;
+	}
+
+
+
+	.txtcard-story-bg {
+		display:flex; justify-content:center; align-items:center;
+		height:250px; margin:80px 0;
+		text-align:center;
+		background:#e3f0c7;
+		transition:all 0.3s ease-in; 
+	}
+	
+	.txtcard-story-bg > p { width:285px; }
+	
+	.txtcard-story-bg:hover { 
+		color:#f6f6f6;
+		background:#5e5e5e;
+	}
+}

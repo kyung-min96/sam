@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+
+.container {
+    position:relative;
+    width:1000px; height:600px; margin:150px auto; padding:10px;
+    background:#81c784;
+}
+
+input, label {
+    position:absolute; top:10px;
+    width:120px; height:40px; cursor:pointer; z-index:99;
+}
+input { opacity:0; }
+
+label {
+    display:block;
+    color:#385c5b; font-weight:bold; text-align:center; line-height:40px;
+    text-transform:uppercase; text-shadow:1px 1px 1px rgba(255,255,255,0.3);
+    background:linear-gradient(to bottom, #5ba4a4, #4e8c8a);
+    border-radius:5px 5px 0 0;
+}
+label::after { /* 탭 버튼 내부 아래에 생기는 바 */
+    content:'';
+    display:block; position:absolute; left:0; bottom:-10px;
+    width:100%; height:10px;
+    background:#fff;
+}
+
+.tab-selector-1, .tab-label-1 { left:10px; }
+.tab-selector-2, .tab-label-2 { left:135px; }
+.tab-selector-3, .tab-label-3 { left:260px; }
+.tab-selector-4, .tab-label-4 { left:385px; }
+.tab-selector-5, .tab-label-5 { left:510px; }
+
+/* .tabtn-bar {
+    position:absolute; top:50px;
+    width:730px; height:10px; margin-bottom:-10px;
+    background:#5ba4a4; border-radius:0 5px 0 0;
+    z-index:-1;
+} */
+
+input:hover + label { top:0; background:#5ba4a4; }
+input:checked + label { top:10px; background:#fff; }
+input:hover + label::after { background:#5ba4a4; }
+input:checked + label::after { background:#fff; }
+/* input:hover ~ .tabtn-bar { top:40px; transition:all 0.3s ease-in; } */
+
+/* input.tab-selector-1:hover + label.tab-label-1 ~ .tabtn-bar { z-index:3; }
+input.tab-selector-2:hover + label.tab-label-2 ~ .tabtn-bar { z-index:2; }
+input.tab-selector-3:hover + label.tab-label-3 ~ .tabtn-bar { z-index:1; }
+input.tab-selector-4:hover + label.tab-label-4 ~ .tabtn-bar { z-index:0; } */
+
+label.tab-label-2 { z-index:4; }
+label.tab-label-3 { z-index:3; }
+label.tab-label-4 { z-index:2; }
+label.tab-label-5 { z-index:1; }
+input:checked + label { z-index:5; }
+
+
+
+.content {
+    position:relative; top:40px;
+    width:100%; height:540px;
+    background:#fff; overflow:hidden;
+}
+.content div {
+    position:absolute; left:-750px; top:0;
+    width:100%; height:100%; padding:20px;
+    background:#fff; opacity:0; overflow: scroll; z-index:1;
+}
+
+.container input.tab-selector-1:checked ~ .content > .content-1,
+.container input.tab-selector-2:checked ~ .content > .content-2,
+.container input.tab-selector-3:checked ~ .content > .content-3,
+.container input.tab-selector-4:checked ~ .content > .content-4 {
+    left:0; opacity:1; z-index:99;
+    transition:all 0.3s ease-in 0.2s;
+}
+
+
+.searchform {
+	width:920px;padding:0 50px;
+ 	border:1px solid  #000;
+ 	opacity:1;
+}
+.tap-list { 
+	width:100%;
+	margin-top:50px;
+	}
+

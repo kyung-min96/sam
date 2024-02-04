@@ -1,0 +1,390 @@
+@charset "UTF-8";
+
+.bn-member-bg {background:#03f;}
+.bn-board-bg {background:#44bd32;}
+.bn-event-bg { 
+	background: url('../imgs/bn-event.jpg')no-repeat center center;
+ 	background-size:cover;
+ }
+ .bn-mypage-bg{
+ 	background: url('../imgs/bn-mypage1.jpg')no-repeat center center;
+ 	background-attachment: fixed;
+ 	background-size:cover;
+ }
+
+ .bn-register-bg{
+ 	background: url('../imgs/bg-register.png')no-repeat center center;
+ 	background-size:cover;
+ 	}
+ .bn-buy-bg{
+ 	background: url('../imgs/bn-buy.jpg')no-repeat bottom center;
+ 	background-attachment: fixed;
+ 	background-size:cover;
+ 	}
+ 
+/* === 공통영역 === */
+
+#spirit{position: absolute;bottom: 0;left: 0;}
+
+.subtitle-txt { text-align:center; font-weight:700; }
+.logo { font-family:'Open Sans', sans-serif; font-size:36px; vertical-align:middle;}
+.logo span { color:#81c784;}
+.container { width: 100%; }
+nav a { display:block; }
+.nav_id {line-height: 100px;}
+
+/* === FHD === */
+@media screen and (min-width:1450px) {
+/*===== header =====*/
+#mb, .trigger { display:none; }
+
+header {
+  position:fixed; left:0; top:0;
+  width:100%; height:80px; z-index:10;
+  background:#f6f6f6;
+  border-bottom:2px solid #bbb ;
+}
+nav {
+  display:flex; justify-content:space-between; align-items:center;
+  width:1400px; height:100%;margin:0 auto;
+}
+nav a { font-family:'Hahmlet', serif; font-weight: 500; color:#111; }
+
+#main-menu { display:flex; z-index: 10; }
+#main-menu > li { position: relative; }
+#main-menu > li > a { width:130px; height:80px; text-align:center; line-height:80px; }
+#main-menu > li > a:hover { color:#81c784; }
+
+.sub-menu { position:fixed; top:80px; display:none;}
+.sub-menu a {
+  width:130px;
+  padding:20px;
+  text-align:center;
+  color:#111;
+}
+
+#nav-drop {
+  position:fixed; left:0; top:80px;
+  width:100%; height:0px; background:#f6f6f6;
+  border-bottom:2px solid #bbb; z-index:1; opacity:0;
+  transition:all 0.4s ease-in;
+}
+#nav-drop.drop { height:60px; opacity:1; }
+
+.sub-menu li {display:inline-block; }
+
+.sub-menu a:hover { color:#81c784; }
+
+.top-menu { display:flex; }
+.top-menu a { padding:10px 15px; font-size:16px; line-height:80px; }
+.top-menu a:hover { color:#81c784; }
+
+/* =====베너 및 서브타이틀===== */
+.bn{ height:580px; }
+h2 { 
+  font-size:72px; padding-top:300px;
+  color :#81c784;text-align:center;
+  }
+h2 > span { color: #f6f6f6; }
+section{ width:1400px; margin:0 auto; }
+h3 {padding-top:100px;font-size:44px; color:#0a410c; }
+.subtitle-txt { margin-bottom: 50px; }
+
+/*===== footer =====*/
+footer { height:100px; background:#0a410c; line-height:100px; margin-top: 100px; }
+.ft-wrap {
+  display:flex; justify-content:space-between;
+  width:1400px; margin:0 auto;padding:0 50px; color:#f6f6f6;
+}
+.ft-wrap p { font-family:'Hahmlet', serif; font-size:16px;}
+.sns{ display:flex; }
+.sns a {
+  padding:0 10px;
+  font-size:32px; color:#f6f6f6;
+}
+.sns a:hover { color:#81c784; }
+
+}
+
+
+/* === HD === */
+@media screen and (min-width:1050px) and (max-width:1449px) {
+/*===== header =====*/
+#mb, .trigger { display:none; }
+
+header {
+  position:fixed; left:0; top:0;
+  width:100%; height:80px; z-index:2;
+  background: #f6f6f6;
+  border-bottom:2px solid #bbb ;
+}
+nav {
+    display:flex; justify-content:space-between; align-items:center;
+    width:1000px; height:100%;margin: 0 auto;
+}
+nav a { font-family:'Hahmlet', serif; font-weight: 500; color:#111; }
+
+#main-menu { display:flex; z-index:10; }
+#main-menu > li { position: relative; }
+#main-menu > li > a { width:130px; height:80px; text-align:center; line-height:80px; }
+#main-menu > li > a:hover { color:#81c784; }
+
+.sub-menu { position:fixed; top:80px; display:none;}
+.sub-menu a {
+  width: 130px;
+  padding:20px;
+  text-align:center;
+  color: #111;
+}
+
+#nav-drop {
+  position:fixed; left:0; top:80px;
+  width: 100%; height:0px; background:#f6f6f6;
+  border-bottom:2px solid #bbb; z-index:1; opacity:0;
+  transition: all 0.4s ease-in;
+}
+#nav-drop.drop { height:60px; opacity:1; }
+
+.sub-menu li {display: inline-block; }
+
+.sub-menu a:hover { color:#81c784; }
+
+.top-menu { display:flex; }
+.top-menu a { padding:10px; font-size:16px; line-height:80px; }
+.top-menu a:hover { color:#81c784; }
+
+/* =====베너 및 서브타이틀===== */
+.bn{ height:500px; }
+h2 { 
+  font-size:68px; padding-top:300px;
+  color:#81c784;text-align:center;
+  }
+h2 > span { color:#f6f6f6; }
+section{ width:1000px; margin:0 auto; }
+h3 {padding-top:100px; font-size:44px; color:#0a410c; }
+.subtitle-txt { margin-bottom: 50px; }
+
+/*===== footer =====*/
+footer { height:100px; background:#0a410c;line-height:100px;margin-top: 80px; }
+.ft-wrap {
+  display:flex; justify-content:space-between;
+  width:1000px; margin:0 auto;padding:0 50px; color:#f6f6f6;
+}
+.ft-wrap p { font-family:'Hahmlet', serif; font-size:16px;}
+.sns{display: flex;}
+.sns a {
+  padding:0 10px;
+  font-size:32px; color:#f6f6f6;
+}
+.sns a:hover { color:#81c784; }
+
+}
+
+
+/* ==tablet== */
+@media screen and (min-width:600px) and (max-width:1049px) {
+#dt { display:none; }
+
+header {
+  position:fixed; left:0; top:0;
+  width:100%; height:50px;
+  z-index:20;
+  background:rgba(0, 0, 0, 0.5);
+}
+nav { height:100%; padding:0 30px; }
+
+.logo {
+    position:absolute; left:50%;
+    transform:translate(-50%, 0);
+    color:#f6f6f6; line-height:50px;
+}
+
+#main-menu {
+  position:fixed; left:-1050px; top:50px;
+  width:100%; height:100%; padding-top:100px;
+  text-align:center;
+  background:#81c784; opacity:0;
+  transition:all 0.4s ease-in;
+}
+#main-menu > li > a {
+  padding:30px 0;
+  font-size:26px; color:#f6f6f6; font-weight:600;
+}
+#main-menu > li > a:hover { color:#00561f; }
+
+.sub-menu { display:none; }
+.sub-menu a {
+  padding:25px 0;
+  font-size:22px; color:#f6f6f6;
+  background:rgba(0,0,0,0.3);
+  transition:all 0.4s ease-in;
+}
+.sub-menu li:last-child a { border-radius:0 0 10px 10px; }
+.sub-menu a:hover { background:#00561f; }
+
+/* active */
+#main-menu.active { left:0; opacity:1; }
+
+.top-menu { display:flex; }
+.top-menu a { padding:5px; font-size:30px; color:#f6f6f6; }
+.top-menu a:hover { color:#81c784; }
+
+/* =====베너 및 서브타이틀===== */
+.bn{ height:420px; }
+h2 { 
+  font-size:64px; padding-top:200px;
+  color:#81c784;text-align:center;
+  }
+h2 > span { color:#f6f6f6; }
+section{ width:600px; margin:0 auto; }
+h3 {padding-top:80px; font-size:40px; color:#0a410c;}
+.subtitle-txt { margin-bottom: 40px; }
+
+/*===== trigger =====*/
+.trigger {
+  position:fixed; right:30px; top:2px;
+  cursor: pointer; z-index:21;
+}
+.trigger input { display: none; }
+.trigger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+.line {
+  fill: none;
+  stroke: white;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+  .line-top-bottom { stroke-dasharray: 12 63; }
+  .trigger input:checked + svg { transform: rotate(-45deg); }
+  .trigger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/*===== footer =====*/
+footer { height:250px; background:#0a410c; text-align:center; margin-top: 100px; }
+.ft-wrap {
+  width: 440px;
+  margin:0 auto;padding:50px; color:#f6f6f6;
+}
+.ft-wrap p { font-family:'Hahmlet', serif; font-size:16px;}
+.sns{display:flex; justify-content:center; margin-top:10px;}
+.sns a {
+  padding:0 10px;
+  font-size:32px; color:#f6f6f6;
+}
+.sns a:hover { color:#81c784; }
+
+}
+
+
+
+/* mobile */
+@media screen and (max-width:599px) {
+#dt { display:none; }
+
+header {
+  position:fixed; left:0; top:0;
+  width:100%; height:50px; z-index:20;
+  background:rgba(0, 0, 0, 0.5);
+}
+nav { height:100%; padding:0 30px; }
+
+.logo {
+  position:absolute; right:20px;
+  color:#f6f6f6; line-height:50px;
+}
+
+#main-menu {
+  position:fixed; left:-1050px; top:50px;
+  width:100%; height:100%; padding-top:100px;
+  text-align:center;
+  background:#81c784; opacity:0;
+  transition:all 0.4s ease-in;
+}
+#main-menu > li > a {
+  padding:30px 0;
+  font-size:26px; color:#f6f6f6; font-weight:600;
+}
+#main-menu > li > a:hover { color:#00561f; }
+
+.sub-menu { display:none; }
+.sub-menu a {
+  padding:25px 0;
+  font-size:22px; color:#f6f6f6;
+  background:rgba(0,0,0,0.3);
+  transition:all 0.4s ease-in;
+}
+.sub-menu li:last-child a { border-radius:0 0 10px 10px; }
+.sub-menu a:hover { background:#00561f; }
+
+/* active */
+#main-menu.active { left:0; opacity:1; }
+.top-menu { display:flex; position:fixed; left:60px; top:0; }
+.top-menu a { padding:5px; font-size:30px; color:#f6f6f6; }
+.top-menu a:hover { color:#81c784; }
+
+/*===== trigger =====*/
+.trigger { cursor: pointer; margin-left: -25px; }
+.trigger input { display:none; }
+.trigger svg {
+  height: 3em;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line {
+  fill:none;
+  stroke: white;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-width:3;
+  transition:stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+             stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.line-top-bottom { stroke-dasharray: 12 63; }
+.trigger input:checked + svg { transform: rotate(-45deg); }
+.trigger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* =====베너 및 서브타이틀===== */
+.bn{ height:340px; }
+h2 { 
+  font-size:60px; padding-top:150px;
+  color :#81c784;text-align:center;
+  }
+h2 > span { color: #f6f6f6; }
+section{ width:340px; margin:0 auto; }
+h3 {
+  width: 340px;margin: 0 auto;
+  padding-top:80px;font-size:36px;
+  color: #0a410c;text-align: center;
+}
+
+.subtitle-txt { width: 330px;text-align: center;
+  margin:0 auto 30px; }
+
+/*===== footer =====*/
+footer { height:250px; background:#0a410c; text-align:center;margin-top: 100px; }
+.ft-wrap {
+  width: 340px;
+  margin:0 auto;padding:50px; color:#f6f6f6;
+}
+.ft-wrap p { font-family:'Hahmlet', serif; font-size:16px;}
+.sns{display: flex; justify-content: center; margin-top:10px;}
+.sns a {
+  padding:0 10px;
+  font-size:32px; color:#f6f6f6;
+}
+.sns a:hover { color:#81c784; }
+}
+
+
+
+
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.member.mappers.member">
+
+	<!-- 회원 목록 -->
+	<select id="list" resultType="com.member.domain.MemberVO">
+		select userId, userName, nickName, regDate, updateDate
+		from tbl_member
+	</select>
+
+	<!-- 회원 가입 -->
+	<insert id="register">
+		insert into tbl_member(userId, userPass, userName, nickName)
+		values(#{userId}, #{userPass}, #{userName}, #{nickName})
+	</insert>
+	
+	<!-- 회원 조회 -->
+	<select id="view" parameterType="String" resultType="com.member.domain.MemberVO">
+		select userId, userPass, userName, nickName, regDate, updateDate
+		from tbl_member
+		where userId = #{userId}
+	</select>
+	
+	<!-- 로그인 처리 -->
+	<select id="login" resultType="com.member.domain.MemberVO">
+		select userId, userPass, userName, nickName
+		from tbl_member
+		where userId=#{userId} and userPass=#{userPass}
+	</select>
+	
+	<!-- 회원 수정 -->
+	<select id="modify">
+		update tbl_member set
+			userPass=#{userPass},
+			userName=#{userName},
+			nickName=#{nickName},
+			updateDate=now()
+		where userId=#{userId}
+	</select>
+	
+	<!-- 회원 삭제 -->
+	<delete id="delete">
+		delete from tbl_member
+		where userId = #{userId} and userPass = #{userPass}
+	</delete>	
+	
+	<!-- 아이디 중복 확인 -->
+	<select id="idCheck" resultType="com.member.domain.MemberVO">
+		select userId
+		from tbl_member
+		where userId = #{userId}
+	</select>
+	
+	<!-- 닉네임 중복 확인 -->
+	<select id="nickNameCheck" resultType="com.member.domain.MemberVO">
+		select nickName
+		from tbl_member
+		where nickName = #{nickName}
+	</select>
+	
+</mapper>

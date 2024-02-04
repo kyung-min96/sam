@@ -1,0 +1,209 @@
+
+SHOW DATABASES;
+
+create database sam;
+
+CREATE USER 'kyungmin'@'localhost' IDENTIFIED BY 'kyungmin1234';
+COMMIT;
+
+SELECT * FROM mysql.user;
+
+GRANT ALL PRIVILEGES ON sam.* TO 'kyungmin'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'kyungmin'@'localhost';
+
+USE sam;
+
+# 회원 테이블 생성
+
+CREATE TABLE tbl_member (
+	userid				VARCHAR(30)		COMMENT '회원아이디',	
+	userpass		VARCHAR(50)		NOT NULL				COMMENT '회원비밀번호',
+	username		VARCHAR(30)		NOT NULL				COMMENT '회원이름',
+	nickname		VARCHAR(30)		NOT NULL				COMMENT '닉네임',
+	regdate			TIMESTAMP			DEFAULT NOW()	COMMENT '작성일',
+	updatedate	TIMESTAMP			DEFAULT NOW()	COMMENT '수정일',
+	PRIMARY KEY (userid),
+	UNIQUE (nickname)
+) COMMENT '회원테이블';
+
+
+# 게시판 테이블 생성 
+
+CREATE TABLE tbl_board (
+   bno      INT         AUTO_INCREMENT COMMENT '게시물번호',
+   title    VARCHAR(50) NOT NULL       COMMENT '게시물제목',
+   content  TEXT        NOT NULL       COMMENT '게시물내용',
+   writer   VARCHAR(25) NOT NULL       COMMENT '작성자',
+   regdate  TIMESTAMP   DEFAULT NOW()  COMMENT '작성일',
+   viewcnt  INT         DEFAULT 0     	COMMENT '조회수',
+   viewLike INT DEFAULT 0 COMMENT '좋아요',
+   viewHate INT DEFAULT 0 COMMENT '싫음개수',
+   replyCnt INT DEFAULT 0 COMMENT '댓글수',
+   PRIMARY KEY (bno)
+) COMMENT '게시물';
+
+# 댓글 테이블 생성
+
+CREATE TABLE tbl_reply(
+	rno			INT 							AUTO_INCREMENT		COMMENT '댓글번호',
+	bno	 		INT							NOT NULL						COMMENT '게시물번호',
+	writer 	VARCHAR(25)		NOT NULL						COMMENT '작성자',
+	content	TEXT	not NULL	COMMENT '댓글내용',
+	regdate 	TIMESTAMP 		DEFAULT NOW()			COMMENT '작성일',
+	PRIMARY KEY(rno)
+	FOREIGN KEY(bno) REFERENCES tbl_board (bno) ON DELETE CASCADE
+) COMMENT '댓글게시물';
+
+# 상품 테이블 생성
+
+CREATE TABLE tbl_product (
+	pno      INT        AUTO_INCREMENT	COMMENT '게시물번호',
+   productid      VARCHAR(20) NOT null     	COMMENT '상품명',
+   title   			VARCHAR(20) NOT NULL       COMMENT '상품제목',
+   img				TEXT 			NOT NULL 		COMMENT '썸네일이미지',
+   content  		TEXT        NOT NULL       COMMENT '상품내용',
+   price 			INT 			NOT NULL			COMMENT '상품가격',
+   sellprice 		INT 			NOT NULL			COMMENT '판매가격',
+   amount 			INT			NOT NULL 		COMMENT '재고', 
+   regdate 			TIMESTAMP   DEFAULT NOW()  COMMENT '작성일',
+   viewcnt 			INT         DEFAULT 0     	COMMENT '조회수',
+   viewlike 		INT			DEFAULT 0		COMMENT '좋아요',
+	reviewcnt 		INT 			DEFAULT 0		COMMENT '댓글수',
+   PRIMARY KEY (pno)
+) COMMENT '상품';
+
+# 리뷰 테이블 생성
+
+CREATE TABLE tbl_review(
+	rno			INT 							AUTO_INCREMENT		COMMENT '댓글번호',
+	pno	 		INT							NOT NULL				COMMENT '게시물번호',
+	writer 		VARCHAR(25)					NOT NULL				COMMENT '작성자',
+	content		TEXT							NOT NULL				COMMENT '댓글내용',
+	regdate 		TIMESTAMP 					DEFAULT NOW()		COMMENT '작성일',
+	PRIMARY KEY(rno),
+	FOREIGN KEY(pno) REFERENCES tbl_product (pno) ON DELETE CASCADE
+	
+) COMMENT '리뷰 게시물';
+
+# 주문 테이블 생성
+CREATE TABLE tbl_order(
+	onum			INT 				AUTO_INCREMENT			COMMENT '주문번호',
+	ouserid	 	VARCHAR(30)		NOT NULL					COMMENT '주문자아이디',
+	oname			VARCHAR(20)		NOT NULL					COMMENT '주문자이름',
+	address		VARCHAR(50) 	NOT NULL 				COMMENT	'배송주소',
+	oproductid 	VARCHAR(20)		NOT NULL					COMMENT '주문상품번호',
+	oprice		INT				not NULL					COMMENT '상품가격',
+	ocount		INT				not NULL					COMMENT '상품개수',
+	oregdate 		TIMESTAMP  		DEFAULT NOW() 			COMMENT '구매일',
+	PRIMARY KEY(onum)
+	
+) COMMENT '주문서 정보';
+
+
+
+
+
+
+# 회원 가입 데이터
+INSERT INTO tbl_member (userid, userpass, username, nickname)     
+VALUES ('admin','1234','관리자','관리자');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user01','1234','user01','user01');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user02','1234','user02','user02');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user03','1234','user03','user03');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user04','1234','user04','user04');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user05','1234','user05','user05');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user06','1234','user06','user06');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user07','1234','user07','user07');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user08','1234','user08','user08');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('user09','1234','user09','user09');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('rudals','1234','김경민','경민짱짱');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('tjdgus','1234','김성현','성현짱짱');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('gmldnjs','1234','이희원','희원짱짱');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('dPwl','1234','이예지','잔망루피');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('wjddn','1234','김정우','강정우');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('guscjf','1234','송현철','현철잉');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('dPthf','1234','김예솔','푸바오');
+INSERT INTO tbl_member (userid, userpass, username, nickname)
+VALUES ('whddnd','1234','황종웅','러바오');
+추후 추가예정
+
+
+
+
+
+# 게시물에 데이터
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('너무 맛있어서 3번째 방문중', '최근에 집근처에 새로나온 음식점이있다고해서 갔다왓는데 리뷰쓰는거 귀찮아하는성격이여서 안쓰려했는데 너무맜잇어서 여기는 꼭써줘야겟다 생각해서 이렇게 작성했습니다', '성현짱짱');
+# 게시물에 데이터 삽입 테스트
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('안쓰려다가 적어봅니다', '동네 맛집이라길래 처음 방문을 해보았는데 입맛이 까다롭다는 얘기를 많이 들었는데 첫입하자마자 와~~~!!! 하는 소리가 저절로 나오게되었습니다. 정말 강추드립니다.', '성현짱짱');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('재방문 5번째 후기', '또또또또또간집이라고 하시면 정말로 믿으시겠습니까?? 늘 한결같이 변하지않는 맛으로 또 서비스와 친절도 정말 만땅인 그런곳입니다 ', '경민짱짱');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('고향생각나게 하는 맛', '시골에서 자라서 부모님이 자주해주시던 쌈밥이 늘 그리웠습니다. 집 근처 쌈밥집을 가도 예전 그맛이 나지 않아 매번 아쉬웠는데 이집은 정말로 고향의 향기가 생각이나게 하는 그러한 맛입니다', '희원짱짱');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('남편과 함께 방문후기남겨요', '남편이랑 싸우고 에라이 쌈이라도 싸먹자 하는 마음에 방문했던 곳이 너무 맛있어서 저희 부부를 화해하게 만들었습니다. 정말 강추드립니다.', '잔망루피');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('가성비맛집 강추', '가격대비 양도 훌륭하고 서비스도 친절하고 너무좋아요', '강정우');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('남친이랑 같이 갓어요', '얼마전 기념일이여서 남친이랑 같이갈만한 분위기좋은 한식집없나 고민하던찰나 새로오픈한 쌈밥집을 발견해서 직접방문해봣는데 분위기도 좋고 매장도 너무깔끔하고 좋았어요!', '푸바오');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목5', '게시물 테스트 내용5', 'user05');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목6', '게시물 테스트 내용6', 'user06');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목7', '게시물 테스트 내용7', 'user07');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목8', '게시물 테스트 내용8', 'user08');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목9', '게시물 테스트 내용9', 'user09');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목10', '게시물 테스트 내용10', 'user10');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목11', '게시물 테스트 내용11', 'user11');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목12', '게시물 테스트 내용12', 'user12');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목13', '게시물 테스트 내용13', 'user13');
+INSERT INTO tbl_board (title, content, writer)
+VALUES ('게시물 테스트 제목14', '게시물 테스트 내용14', 'user14');
+추후 추가예정
+
+
+
+
+
+#상품 데이터
+
+
+INSERT INTO tbl_product (productid, title, img, content,price,sellprice, amount)
+VALUES ('된장쌈장', '된장쌈장 할인중','이미지', '저희 쌈밥집의 대표메뉴입니다.최근 고객님들의 무수한 관심으로 주문폭주중!','10000','7900','100');
+INSERT INTO tbl_product (productid, title, img, content,price,sellprice, amount)
+VALUES ('고추장삽겹살', '고추장삼겹살40%할인중','이미지', '저희 쌈밥집의 2번째 인기메뉴 맛있는 맛으로 보답드립니다 한번드셔보세요','40000','29000','100');
+INSERT INTO tbl_product (productid, title, img, content,price,sellprice, amount)
+VALUES ('모둠쌈', '모든음식과 어울리는 모둠쌈','이미지', '산지 직송 무농약 상추입니다. 한번드셔보시면 놀라실꺼에요','2000','990','10');
+INSERT INTO tbl_product (productid, title, img, content,price,sellprice, amount)
+VALUES ('구운삼겹살', '구운삼겹살 10%할인중','이미지', '텍스트이미지','20000','17900','100');
+INSERT INTO tbl_product (productid, title, img, content,price,sellprice, amount)
+VALUES ('쌈도시락', '재구매율 1위 쌈도시락','이미지', '쌈밥 도시락은 첨보시죠 ? 저희도 한번만들어봣는데 인기가 이렇게 많을줄몰랏네요','8000','4900','1000');
+
+
+#주문 데이터 삽입
+추후 추가예정
+

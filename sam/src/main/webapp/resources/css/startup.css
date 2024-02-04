@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* === 공통 영역 === */
+
+.bn-stup-bg {
+    background:url('../imgs/startup-bn-bg.jpg') no-repeat center center;
+    background-size:cover;        
+}
+
+.st-proce { width:150px; height:150px; margin:0 auto; }
+.st-proce1 {        
+    background:url('../imgs/startup-proce1.png') no-repeat center center;
+    background-size:cover;
+}
+.st-proce2 {        
+    background:url('../imgs/startup-proce2.png') no-repeat center center;
+    background-size:cover;
+}
+.st-proce3 {        
+    background:url('../imgs/startup-proce3.png') no-repeat center center;
+    background-size:cover;
+}
+.st-proce4 {        
+    background:url('../imgs/startup-proce4.png') no-repeat center center;
+    background-size:cover;
+}
+.st-proce5 {        
+    background:url('../imgs/startup-proce5.png') no-repeat center center;
+    background-size:cover;
+}
+.st-proce6 {        
+    background:url('../imgs/startup-proce6.png') no-repeat center center;
+    background-size:cover;
+}
+.st-proce7 {        
+    background:url('../imgs/startup-proce7.png') no-repeat center center;
+    background-size:cover;
+}
+.st-proce8 {        
+    background:url('../imgs/startup-proce8.png') no-repeat center center;
+    background-size:cover;
+}
+.st-proce9 {        
+    background:url('../imgs/startup-proce9.png') no-repeat center center;
+    background-size:cover;
+}
+
+.bn-su-bg {
+    position: relative;
+    text-align:center;
+    background:url('../imgs/startup-bn-sub-bg.jpg') no-repeat center center;
+    background-size:cover;
+    color:#fff;
+    overflow:hidden;
+}
+.bn-su-bg a {
+    position:absolute;left: 50%;
+    transform:translate(-50%,0);
+}
+
+.st-condition {
+    display: flex; flex-wrap:wrap;
+    justify-content:space-between; text-align:center;
+}   
+.st-condition li { 
+    position:relative;
+    background:#effbdc;
+}
+.st-condition p { 
+    position:absolute;left:50%;
+    transform:translate(-50%,0);
+}
+.st-condition a { 
+    position:absolute;left:50%;
+    transform:translate(-50%,0);
+}
+.st-cd1 {
+    background:url('../imgs/condi1.png') no-repeat center center;        
+}
+.st-cd2 {
+    background:url('../imgs/condi2.png') no-repeat center center;        
+}
+.st-cd3 {
+    background:url('../imgs/condi3.png') no-repeat center center;        
+}
+.st-cd4 {
+    background:url('../imgs/condi4.png') no-repeat center center;        
+}
+.st-cd5 {
+    background:url('../imgs/condi5.png') no-repeat center center;        
+}
+.st-cd6 {
+    background:url('../imgs/condi6.png') no-repeat center center;        
+}
+
+
+/*===== 올빼미 캐러셀 커스터마이징 =====*/
+
+.item { overflow:hidden; margin:0 auto; background:rgba(133, 243, 175, 0.298); border-radius:10px; }
+
+.item p { padding-top:30px; font-size:16px; color:#000; text-align: center; }
+
+.owl-carousel { margin:0 auto; }
+
+.owl-prev, .owl-next { position:absolute; }
+.owl-prev i, .owl-next i { font-size:35px; }
+
+
+/*===== FHD =====*/
+
+@media screen and (min-width:1450px) {    
+.item { width:300px; height:300px;padding:50px; }
+.owl-prev { left:-50px; top:30%; }
+.owl-next { right:-50px; top:30%; }
+
+.bn-su-bg { margin-top:100px; padding:100px; }
+.bn-su-bg h4 { font-size:42px; }
+.bn-su-bg p { padding-top:130px; font-size:18px; }
+.bn-su-bg a { bottom: 100px; }
+
+.st-condition li { width: 450px; height: 300px; padding: 30px; margin-bottom: 25px; }
+.st-condition p { width:225px; bottom:30px; }
+.st-condition a { bottom:30px; }
+.st-condition h5 { margin-top: 30px; font-size:20px; }
+.st-cd { width:150px; height:100px; margin:0 auto; }
+
+}
+    
+
+/*===== HD =====*/
+
+@media screen and (min-width:1050px) and (max-width:1449px) {
+.item { width:300px; height:300px; padding:50px; }
+.owl-prev { left:-50px; top:40%; }
+.owl-next { right:-50px; top:40%; }
+
+.bn-su-bg { margin-top:50px; padding:100px; }
+.bn-su-bg h4 { font-size:42px; }
+.bn-su-bg p { padding-top:90px; font-size:18px; }
+.bn-su-bg a { bottom: 100px; }
+
+.st-condition li { width: 300px; height: 300px; padding: 30px; margin-bottom: 50px; }
+.st-condition p { width: 240px; bottom: 30px; }
+.st-condition a { bottom:30px; }
+.st-condition h5 { margin-top: 30px; font-size:20px; }
+.st-cd { width:150px; height:100px; margin:0 auto; }
+
+}
+
+
+/*===== Tablet =====*/
+
+@media screen and (min-width:600px) and (max-width:1049px) {
+    
+    .item { width:270px; height:300px; padding:50px; }
+    .owl-prev { left:-50px; top:40%; }
+    .owl-next { right:-50px; top:40%; }
+
+    .bn-su-bg { margin-top:80px; padding:100px; }
+    .bn-su-bg h4 { font-size:42px; }
+    .bn-su-bg p { padding-top:50px; font-size:18px; }
+    .bn-su-bg a { bottom: 100px; }
+
+    .st-condition li { width: 280px; height: 300px; padding: 30px; margin-bottom: 40px; }
+    .st-condition p { width: 240px; bottom: 30px; }
+    .st-condition a { bottom:30px; }
+    .st-condition h5 { margin-top: 30px; font-size:20px; }
+    .st-cd { width:150px; height:100px; margin:0 auto; }
+    
+}
+
+
+/*===== Smart Phone =====*/
+
+@media screen and (max-width:599px) {
+
+.item { width:300px; height:250px;padding:25px; }
+.owl-prev { left:-20px; top:35%; }
+.owl-next { right:-20px; top:35%; }
+.item p { padding-top:20px; }
+.bn-stup-bg {
+    background:url('../imgs/startup-bn-bg.jpg') no-repeat center center;
+    background-size:cover;        
+}
+
+.bn-su-bg { margin-top:80px; padding:50px; }
+.bn-su-bg h4 { font-size:42px; }
+.bn-su-bg p { padding-top:45px; font-size:18px; }
+.bn-su-bg a { bottom: 50px; }
+.st-condition li { width: 340px; height: 300px; padding: 30px; margin-bottom: 30px; }
+.st-condition p { width: 240px; bottom: 30px; }
+.st-condition a { bottom:30px; }
+.st-condition h5 { margin-top: 30px; font-size:20px; }
+.st-cd { width:150px; height:100px; margin:0 auto; }
+
+}
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<!-- @Controllers에서 /WEB-INF/views 디렉토리의 .jsp 파일로 렌더링한다 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<!-- BoardController 등록 -->
+	<context:component-scan base-package="com.board.controller" />
+	<!-- MemberController 등록 -->
+	<context:component-scan base-package="com.member.controller" />
+	<!-- SubController 등록 -->
+	<context:component-scan base-package="com.sub.controller" />
+	<!-- ProductController 등록 -->
+	<context:component-scan base-package="com.product.controller" />
+	<!-- 스프링 첨부파일 업로드 설정 -->
+	<!-- CKEditor-File Upload 설정 -->
+	<!--
+		① 스프링 MVC의 CommonsMultipartResolver 클래스를 등록한 후 객체의 속성을 설정한다. 
+		② 첨부파일 업로드 빈을 설정할 경우 반드시 id 속성 값을 'multipartResolver'로 설정한다.
+		③ defaultEncoding은 첨부파일의 문자 인코딩 방식을 설정한다.
+			- 업로드 하는 첨부파일의 이름이 한글일 경우 깨지는 문제를 처리(utf-8)한다.
+		④ maxUploadSize는 최대 업로드 파일(모든 첨부파일) 크기를 바이트 단위로 설정한다.
+			- 10MB는 10485760(1024 x 1024 x 10) byte이다.
+			- 최대 업로드 파일 크기의 값이 -1이면 제한이 없음을 의미한다.
+		⑤ maxUploadSizePerFile은 업로드 파일 하나의 최대 크기를 바이트 단위로 설정한다.
+			- 2MB는 2097152(1024 * 1024 * 2) byte이다. 
+		⑥ uploadTempDir은 임시 업로드 폴더를 설정한다.
+			- 업로드 파일을 임시 파일 형태로 보관한다.
+			- 절대 경로를 이용하려면 URI 형태인 'file:/'로 시작 한다.
+		⑦ maxInMemorySize는 메모리상에서 유지하는 최대 크기를 바이트 단위로 설정한다.
+	-->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="defaultEncoding" value="utf-8" />
+		<beans:property name="maxUploadSize" value="10485760" />
+		<beans:property name="maxUploadSizePerFile" value="2097152"></beans:property>
+		<beans:property name="uploadTempDir" value="file:/C:/upload/tmp"></beans:property>
+		<beans:property name="maxInMemorySize" value="10485756"></beans:property>
+	</beans:bean>
+	
+</beans:beans>

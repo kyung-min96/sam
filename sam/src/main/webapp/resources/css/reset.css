@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Hahmlet:wght@300;500&family=Open+Sans:wght@700&family=Roboto+Slab:wght@600&display=swap');
+/* font-family:'Open Sans', sans-serif; 메인타이틀_영문_700
+font-family:'Hahmlet', serif; 헤더-푸터_한글_300,500
+font-family:'Roboto Slab', serif; 서브타이틀_영문_600
+font-family:'Gowun Batang', serif; 본문텍스트_한글_400,700 */
+
+
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+	font-family:'Gowun Batang', sans-serif;
+	font-size:16px; color:#333; font-weight:400;
+	background:url('../imgs/all-bg-noise.jpg');
+}
+
+h1,h2{ font-family:'Open Sans', sans-serif; text-align: center; }
+h3,h4{ font-family:'Roboto Slab', serif; text-align: center; }
+
+ul li {list-style:none;}
+a {display:inline-block; color:#333; text-decoration:none; outline:0; border:0; font-family:'Gowun Batang', sans-serif;}
+
+input, button {
+	display:inline-block; font-size:16px;
+	border:0; outline:0; background:none;
+}
+
+.valueform, .valuetext {width:100%; padding:10px 15px; border:1px solid #0097e6; border-radius:5px;}
+.valueform:focus, .valuetext:focus {background:#dcdde1; border:1px solid #dcdde1; }
+
+.btn {margin:0 5px; padding:10px 15px; color:#f6f6f6; border-radius:5px; cursor:pointer;}
+.btn-primary {background:#487eb0;}
+.btn-danger {background:#e84118;}
+.btn-success {background:#4cd137;}
+.btn-info {background:#00a8ff;}
+.btn-default {background:#7f8fa6;}
+.btn-primary:hover {background:#40739e;}
+.btn-danger:hover {background:#c23616;}
+.btn-success:hover {background:#44bd32;}
+.btn-info:hover {background:#0097e6;}
+.btn-default:hover {background:#718093;}
+
+
+
+
+
+
+
+
